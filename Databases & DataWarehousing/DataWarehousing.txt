@@ -1,0 +1,137 @@
+business intelligence: Act of transforming raw or operational data into useful information for business analysis.
+
+Data Warehouse(DWH): Central location to which data from various locations (databases) are stored. We do ETL on data from different sources and store the data i.e load the data in DWH. Now on this DWH, OLAP i.e business analysis is done by business users and also business users can do visualization/reporting. Not necessary to store real time data. Contains legacy/old data.
+Advantages --> Strategic questions can be answered by studying trends. Faster and more accurate 
+Properties --> Subject-oriented, integrated, time-variant, non-volatile.
+Types --> Enterprise DWH, operational data store, data mart
+
+Operational Database: Source to DWH. It is a database which is used to store and manage the data in real time. Data can be added or deleted on the fly. Example data can be payroll records, employee data, 
+
+Data Warehousing :  One of the most important activity of Business Intelligence. Subset of BI. Defined as technique of collecting and managing data to provide meaningful business insights. It is electronic storage of large amount of data.
+Considered as OLAP and not as OLTP. Process of transforming data into information and make it available to users in a timely manner to make a difference.
+Also called as -->
+1. Decision Support System
+2. Executive Information System
+3. Business Intelligence Solution 
+4. Management Information System
+5. Analytic Application
+ 
+Types of Data --> Structured, Unstructured, Semi Structured
+
+Database vs DWH:
+Parameter 						Database   								      							Data Warehouse
+Purpose 	  			Is designed to record														Is designed to analyze
+Processing Method		The database uses the Online Transactional Processing (OLTP)				Data warehouse uses Online Analytical Processing (OLAP).
+Usage					The database helps to perform fundamental operations for your business		Data warehouse allows you to analyze your business.
+Tables and Joins		Tables and joins of a database are complex as they are normalized.			Table and joins are simple in a data warehouse because 
+																											they are denormalized.	
+Orientation				Is an application-oriented collection of data								It is a subject-oriented collection of data
+Storage limit			Generally limited to a single application									Stores data from any number of applications
+Availability			Data is available real-time													Data is refreshed from source systems as and when needed
+Usage					ER modeling techniques are used for designing.								Data modeling techniques are used for designing.
+Technique				Capture data																Analyze data
+Data Type				Data stored in the Database is up to date.									Current and Historical Data is stored in Data Warehouse. 
+																									and may not be up to date.
+Storage of data			Flat Relational Approach method is used for data storage.					Data Ware House uses dimensional and normalized approach
+																									for the data structure.Example: Star and snowflake schema.
+Query Type				Simple transaction queries are used.										Complex queries are used for analysis purpose.
+Data Summary			Detailed Data is stored in a database.										It stores highly summarized data.
+
+OLTP and OLAP:
+Parameters							OLTP																        	OLAP
+Process			It is an online transactional system. It manages database modification.			OLAP is an online analysis and data retrieving process.
+Characteristic	It is characterized by large numbers of short online transactions.				It is characterized by a large volume of data.
+Functionality	OLTP is an online database modifying system.									OLAP is an online database query management system.
+Method			OLTP uses traditional DBMS.														OLAP uses the data warehouse.
+Query			Insert, Update, and Delete information from the database.						Mostly select operations
+Table			Tables in OLTP database are normalized.											Tables in OLAP database are not normalized.
+Source			OLTP and its transactions are the sources of data.								Different OLTP databases become the source of data for OLAP.
+Data Integrity	OLTP database must maintain data integrity constraint.							OLAP database does not get frequently modified. Hence, data 
+																								  integrity is not an issue. 	
+Response time	It's response time is in millisecond.											Response time in seconds to minutes.
+Data quality	The data in the OLTP database is always detailed and organized.					The data in OLAP process might not be organized.(summarized)
+Usefulness		It helps to control and run fundamental business tasks.							It helps with planning, problem-solving, and decision 	
+																									support.
+Operation		Allow read/write operations.													Only read and rarely write.
+Audience		It is a market orientated process.												It is a customer orientated process.
+Query Type		Queries in this process are standardized and simple.							Complex queries involving aggregations.
+Back-up			Complete backup of the data combined with incremental backups.					OLAP only need a backup from time to time. Backup is not 
+																										important compared to OLTP.
+Design			DB design is application oriented. Example: Database design changes				DB design is subject oriented. Example: Database design 
+				with industry like Retail, Airline, Banking,etc 								changes with subjects like sales, marketing,purchasing,etc 
+User type		It is used by Data critical users like clerk, DBA & Data Base professionals.	Used by Data knowledge users like workers, managers, and CEO.
+Purpose			Designed for real time business operations.										Designed for analysis of business measures by category and 
+																									attributes.
+Performance 	Transaction throughput is the performance metric								Query throughput is the performance metric.	
+metric	
+Number of users	This kind of Database users allows thousands of users.							This kind of Database allows only hundreds of users.
+Productivity	It helps to Increase user's self-service and productivity						Help to Increase productivity of the business analysts.
+Challenge		Data Warehouses historically have been a development project 					An OLAP cube is not an open SQL server data warehouse.
+				which may prove costly to build.												Therefore, technical knowledge and experience is essential 	
+																								to manage the OLAP server.
+Process			It provides fast result for daily used data.									It ensures that response to the query is quicker 
+																								consistently.
+Characteristic	It is easy to create and maintain.												It lets the user create a view with the help of a 
+																								spreadsheet.
+Style			OLTP is designed to have fast response time, low data redundancy 				A data warehouse is created uniquely so that it can 	
+				and is normalized.																integrate different data sources for building a 
+																									consolidated database
+
+
+
+OLTP Example -->
+1. A super market server which records every single product purchased at that market.
+2. A bank server which records every time a transaction is made for particular account.
+3. Railway reservation server which records the transactions of a passenger.
+
+OLAP Example -->
+1. Bank Manager wants to know how many customers are using the ATM of his branch. Based on this he may take a call whether to continue ATM at the branch or not.
+2. An insurance company wants to know the number of policies each agent sold. This will help in better performance managemnent of agents.
+
+Advantage of OLAP over OLTP --> opens up new views of looking at data. supports filtering/sorting of data. Data can be refined.
+
+OLTP systems use data stored in form of 2D tables with rows and columns. OLAP data is stored as Cubes i.e 3D
+
+OlAP Operations -->
+1. Roll up --> performs aggregations on data cube by either --> a) climbing up a concept hierarchy for a dimension. b) Dimension Reduction.
+2. Drill down --> Reverse of Roll up. 2 ways --> a) stepping down a conceptof hierarchy fro a dimension. b) introducing new dimension. 
+3. Slice --> provides a new sub cube from one particular dimension in a given cube.
+4. Dice --> provides a new sub cube from two or more dimensions in a given cube.
+5. Pivot --> also known as rotation operation. It transposes the axes in order to provide an alternative presentation of data.
+
+ETL: (Extract, Transform and Load)
+It is a process of extracting the data from various sources, transforming this data to meet your requirement and then loading into the target Data Warehouse.
+
+Data Mart(DM): 
+It is the smaller version of DWH which deals with only one subject. Extends the functionality of DWH. They are focused on only one area. Hence the draw data from only few sources. Time taken to build data mart is very less as compared to DWH.
+
+DWH vs Data Mart
+
+        DWH																		Data Mart
+Enterprise wide data. 														Department wide data.								
+Multiple subject area. 														Single subject area.
+Multiple data sources.														Fewer data sources.
+Occupies large memory.														Occupies limited memory.
+Longer time to implement.													Shorter time to implement.
+
+Types od Data Mart --> 1. Dependent Data Marts = OLTP source --> DWH --> DM
+2. Independent Data Mart = OLTP source --> DM
+3. Hybrid Data Mart = OLTP  ------------>
+											DM
+					  DWH   ------------>
+
+Meta Data:
+Its a data about data. It answers the questions like what type of data is the source i.e flat file, relational database and other objects. It also answers questions like what is the size of the actual data/file, location of actual data, source from where data came, when it was created,  
+
+Facts and Dimensions:
+Dimensional Model = Fact Table + Dimension tables
+Dimension --> Table that describe the dimensions involved are called dimension tables.
+Fact --> Fact is a measure that can be summed/aggregated/manipulated. Example --> for a sales business process, a fact/measure would be number of quartely sales.
+Fact Table --> contains facts and dimension key. 
+
+Every dimension is linked to fact table.
+
+Schemas: 
+Star Schema, Snowflake Schema, fact constellation Schema(galaxy schema).
+
+Schema gives the logical description of the database.
